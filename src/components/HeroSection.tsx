@@ -1,6 +1,7 @@
 import React from 'react';
 import {useTranslations} from 'next-intl';
 import {StaticImageData} from 'next/image';
+import {min} from 'lodash';
 
 interface HeroSectionProps {
   backgroundUrl: string | StaticImageData | null;
@@ -14,7 +15,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const t = useTranslations('HeroSection');
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center">
+    <section
+      className="relative h-full w-full flex items-center justify-center"
+      style={{minHeight: '600px'}}
+    >
       {isVideo ? (
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
