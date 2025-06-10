@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import {useParams} from 'next/navigation';
 import {Locale} from 'next-intl';
-import {ChangeEvent, ReactNode, useTransition} from 'react';
+import React, {ChangeEvent, ReactNode, useTransition} from 'react';
 import {usePathname, useRouter} from '@/i18n/navigation';
 
 type Props = {
@@ -38,19 +38,35 @@ export default function LocaleSwitcherSelect({
   return (
     <label
       className={clsx(
-        'relative text-gray-400',
+        'relative text-gray-400 flex',
         isPending && 'transition-opacity [&:disabled]:opacity-30'
       )}
     >
       <p className="sr-only">{label}</p>
-      <select
-        className="inline-flex appearance-none bg-transparent py-3 pl-2 pr-6"
-        defaultValue={defaultValue}
-        disabled={isPending}
-        onChange={onSelectChange}
-      >
-        {children}
-      </select>
+      <div className="flex items-center gap-2">
+        {React.Children.map(children, (child) => {
+          if (React.isValidElement(child)) {
+            const locale = child.props.value;
+            return (
+              <button
+                key={locale}
+                className={clsx(
+                  'px-3 py-2 rounded-md transition-colors',
+                  defaultValue === locale
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-200 hover:bg-gray-300 text-gray-700',
+                  isPending && 'opacity-50 cursor-not-allowed'
+                )}
+                disabled={isPending}
+                onClick={() => onSelectChange({target: {value: locale}} as any)}
+              >
+                {child.props.children}
+              </button>
+            );
+          }
+          return null;
+        })}
+      </div>
       <span className="pointer-events-none absolute right-2 top-[8px]">⌄</span>
     </label>
   );

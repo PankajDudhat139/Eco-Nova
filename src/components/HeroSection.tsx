@@ -45,7 +45,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <p className="text-xl md:text-2xl mb-8">{t('description')}</p>
         <a
           href={t('ctaLink')}
-          className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300"
         >
           {t('ctaText')}
         </a>

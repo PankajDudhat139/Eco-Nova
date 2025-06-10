@@ -12,6 +12,19 @@ type Props = {
   params: Promise<{locale: Locale}>;
 };
 
+const items = [
+  {
+    title: 'Eco-Friendly Product',
+    description: 'This is a great eco-friendly product.',
+    images: [
+      'https://images.pexels.com/photos/8294617/pexels-photo-8294617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/8294649/pexels-photo-8294649.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/8294661/pexels-photo-8294661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/8294658/pexels-photo-8294658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    ]
+  }
+];
+
 export default function IndexPage({params}: Props) {
   const {locale} = use(params);
 
@@ -21,24 +34,11 @@ export default function IndexPage({params}: Props) {
   return (
     <>
       <HeroSection
-        backgroundUrl='https://images.unsplash.com/photo-1550757750-107dfbca40bc?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        backgroundUrl="https://images.pexels.com/photos/9783346/pexels-photo-9783346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         isVideo={false}
       />
       <FeatureSection />
-      <ProductSection
-        title="Eco-Friendly Product"
-        description="This is a great eco-friendly product."
-        specifications={[
-          { label: 'Material', value: 'Recycled Plastic' },
-          { label: 'Dimensions', value: '10 x 5 x 2 inches' },
-        ]}
-        images={[
-          'https://images.unsplash.com/photo-1550757750-107dfbca40bc?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          'https://images.unsplash.com/photo-1550757750-107dfbca40bc?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          'https://images.unsplash.com/photo-1550757750-107dfbca40bc?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          'https://images.unsplash.com/photo-1550757750-107dfbca40bc?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        ]}
-      />
+      <ProductSection items={items} />
       <CallToActionSection />
       <TestimonialSection />
       <FooterSection />
