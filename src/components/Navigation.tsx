@@ -25,9 +25,7 @@ export default function Navigation() {
   return (
     <div
       className={`w-full top-0 z-50 duration-300 bg-opacity-80 shadow-sm backdrop-blur-sm ${
-        scrolled
-          ? 'translate-y-0 fixed bg-white dark:bg-dark '
-          : ''
+        scrolled ? 'translate-y-0 fixed bg-white dark:bg-dark ' : ''
       }`}
     >
       <nav className="container p-2 text-white">
@@ -56,7 +54,7 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-4">
-            <NavigationLink href="/">{t('home')}</NavigationLink>
+            {/* <NavigationLink href="/">{t('home')}</NavigationLink> */}
             {/* <NavigationLink href="/pathnames">{t('pathnames')}</NavigationLink> */}
             <LocaleSwitcher />
           </div>
@@ -71,7 +69,7 @@ export default function Navigation() {
           }`}
         >
           <div className="flex flex-col space-y-4">
-            <NavigationLink href="/">{t('home')}</NavigationLink>
+            {/* <NavigationLink href="/">{t('home')}</NavigationLink> */}
             {/* <NavigationLink href="/pathnames">{t('pathnames')}</NavigationLink> */}
             <LocaleSwitcher />
           </div>
