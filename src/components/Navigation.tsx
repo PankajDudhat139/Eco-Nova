@@ -57,7 +57,7 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-4">
             <NavigationLink href="/">{t('home')}</NavigationLink>
-            <NavigationLink href="/pathnames">{t('pathnames')}</NavigationLink>
+            {/* <NavigationLink href="/pathnames">{t('pathnames')}</NavigationLink> */}
             <LocaleSwitcher />
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function Navigation() {
         >
           <div className="flex flex-col space-y-4">
             <NavigationLink href="/">{t('home')}</NavigationLink>
-            <NavigationLink href="/pathnames">{t('pathnames')}</NavigationLink>
+            {/* <NavigationLink href="/pathnames">{t('pathnames')}</NavigationLink> */}
             <LocaleSwitcher />
           </div>
         </div>
