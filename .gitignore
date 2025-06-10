@@ -1,41 +1,25 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Dependencies and build directories
+/node_modules     # Node.js modules directory
+/.next/          # Next.js build directory
+.DS_Store        # Mac OS system files
+tsconfig.tsbuildinfo  # TypeScript incremental build info
 
-# dependencies
+# Test related
+/test-results/       # Test results directory
+/playwright-report/  # Playwright test reports
+/playwright/.cache/  # Playwright cache
+
+# Output directories
+out                  # Build output directory
+
+# Generated files
+messages/en.d.json.ts  # Generated TypeScript definitions for translations
 /node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
 /.next/
-/out/
-
-# production
-/build
-
-# misc
 .DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+tsconfig.tsbuildinfo
+/test-results/
+/playwright-report/
+/playwright/.cache/
+out
+messages/en.d.json.ts

@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
+import {NextConfig} from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+// This file is used to configure the next-intl plugin for Next.js.
+const withNextIntl = createNextIntlPlugin({
+  experimental: {
+    createMessagesDeclaration: './messages/en.json' // Path to your default messages file
+  }
+});
 
-export default nextConfig;
+const config: NextConfig = {};
+
+export default withNextIntl(config);

@@ -1,0 +1,48 @@
+{
+  "Error": {
+    "description": "<p>Lo sentimos, ha ocurrido un problema.</p><p>Puedes intentar <retry>recargar esta página</retry>.</p>",
+    "title": "¡Algo salió mal!"
+  },
+  "LocaleLayout": {
+    "title": "Español Eco Nova"
+  },
+  "LocaleSwitcher": {
+    "label": "Cambiar idioma",
+    "locale": "{locale, select, en {🇺🇸 Inglés} es {🇪🇸 Español} other {Español}}"
+  },
+  "Manifest": {
+    "name": ""
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "pathnames": "Rutas"
+  },
+  "NotFoundPage": {
+    "description": "Por favor, verifica la barra de direcciones de tu navegador o usa la navegación para ir a una página conocida.",
+    "title": "Página no encontrada"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "description": "Aprende más sobre next-intl en la documentación oficial.",
+        "href": "https://next-intl.dev",
+        "title": "Documentación"
+      },
+      "source": {
+        "description": "Mira el código fuente de este ejemplo en GitHub.",
+        "href": "https://next-intl.dev",
+        "title": "Código fuente"
+      }
+    }
+  },
+  "PathnamesPage": {
+    "description": "<p>Las rutas también están internacionalizadas.</p><p>Si usas el idioma predeterminado inglés, verás <code>/en/pathnames</code> en la barra de direcciones del navegador en esta página.</p><p>Si cambias el idioma a español, la URL se localizará correspondientemente (<code>/es/rutas</code>).</p>",
+    "title": "Rutas"
+  },
+  "HeroSection": {
+    "description": "Este ejemplo muestra cómo usar Eco Nova con Next.js App Router.",
+    "title": "Eco Nova",
+    "ctaLink": "https://next-intl.dev",
+    "ctaText": "Documentación"
+  }
+}
