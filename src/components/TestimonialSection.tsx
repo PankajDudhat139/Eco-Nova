@@ -4,6 +4,7 @@ interface Testimonial {
   quote: string;
   author: string;
   title: string;
+  image: string;
 }
 
 const testimonials: Testimonial[] = [

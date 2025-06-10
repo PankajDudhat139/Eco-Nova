@@ -1,7 +1,7 @@
 import React from 'react';
 import {useTranslations} from 'next-intl';
 import {StaticImageData} from 'next/image';
-import {min} from 'lodash';
+//import {min} from 'lodash';
 
 interface HeroSectionProps {
   backgroundUrl: string | StaticImageData | null;
@@ -27,7 +27,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           muted
           playsInline
         >
-          <source src={backgroundUrl} type="video/mp4" />
+          {/* <source src={backgroundUrl} type="video/mp4" /> */}
         </video>
       ) : (
         <div
@@ -45,7 +45,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <p className="text-xl md:text-2xl mb-8">{t('description')}</p>
         <a
           href={t('ctaLink')}
-          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300"
+          className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300"
         >
           {t('ctaText')}
         </a>

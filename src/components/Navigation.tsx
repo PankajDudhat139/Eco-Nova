@@ -1,11 +1,11 @@
 'use client';
 import {useEffect, useState} from 'react';
-import {useTranslations} from 'next-intl';
+//import {useTranslations} from 'next-intl';
 import LocaleSwitcher from './LocaleSwitcher';
 import NavigationLink from './NavigationLink';
 
 export default function Navigation() {
-  const t = useTranslations('Navigation');
+  //const t = useTranslations('Navigation');
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
