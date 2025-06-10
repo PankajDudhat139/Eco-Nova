@@ -8,7 +8,7 @@
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, es {ES Spanish} en {🇺🇸 English} other {English}}"
+    "locale": "{locale, select, es {Spanish} en {English} other {English}}"
   },
   "Manifest": {
     "name": "Eco Nova example"

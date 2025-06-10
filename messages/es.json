@@ -8,7 +8,7 @@
   },
   "LocaleSwitcher": {
     "label": "Cambiar idioma",
-    "locale": "{locale, select, en {🇺🇸 Inglés} es {🇪🇸 Español} other {Español}}"
+    "locale": "{locale, select, en {Inglés} es {Español} other {Español}}"
   },
   "Manifest": {
     "name": ""
