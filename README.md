@@ -55,3 +55,5 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+[Content Model](https://app.contentful.com/spaces/iqc3gbk28f0n/visual_modeler/content_types/featureItem?utm_medium=share)
