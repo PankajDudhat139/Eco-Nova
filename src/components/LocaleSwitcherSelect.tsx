@@ -46,7 +46,8 @@ export default function LocaleSwitcherSelect({
       <div className="flex items-center gap-2">
         {React.Children.map(children, (child) => {
           if (React.isValidElement(child)) {
-            const locale = (child as React.ReactElement<{ value: string }>).props.value;
+            const locale = (child as React.ReactElement<{value: string}>).props
+              .value;
             return (
               <button
                 key={locale}
@@ -60,7 +61,10 @@ export default function LocaleSwitcherSelect({
                 disabled={isPending}
                 onClick={() => onSelectChange({target: {value: locale}} as any)}
               >
-                {(child as React.ReactElement<{children: ReactNode}>).props.children}
+                {
+                  (child as React.ReactElement<{children: ReactNode}>).props
+                    .children
+                }
               </button>
             );
           }
