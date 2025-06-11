@@ -1,13 +1,55 @@
-# example-app-router
+# 🌿 EcoNova: Headless Landing Page
 
-An example that showcases basic usage of `next-intl` with the App Router, including internationalized routing.
+A fully dynamic, multilingual landing page for the fictional sustainable tech product **EcoNova**, built with **Next.js (App Router)**, **TypeScript**, and **TailwindCSS**. Designed with headless principles in mind, this architecture is prepared for future CMS integration, while currently demonstrating dynamic rendering with static content.
 
-[Demo](https://next-intl-example-app-router.vercel.app/)
+---
 
-[Content Model](https://app.contentful.com/spaces/iqc3gbk28f0n/visual_modeler/content_types/featureItem?utm_medium=share)
+## 📦 Tech Stack
 
-## Deploy your own
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Multilingual Support (English & Spanish)**
+- **Dynamic Section Rendering**
 
-By deploying to [Vercel](https://vercel.com), you can check out the example in action. Note that you'll be prompted to create a new GitHub repository as part of this, allowing you to make subsequent changes.
+---
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/amannn/next-intl/tree/main/examples/example-app-router)
+## ✅ Features
+
+- Dynamically rendered page sections
+- Static data structure mimicking a headless CMS
+- Language switcher for English and Spanish
+- Mobile-first responsive UI
+- Reusable, scalable components
+- WCAG-compliant accessibility
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/PankajDudhat139/Eco-Nova
+cd Eco-Nova
+### 2. Live Demo
+
+Check out the live demo at [EcoNova Landing](https://eco-nova-9tkj.vercel.app/en)
+
+### 3. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 4. Run Development Server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
