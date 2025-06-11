@@ -58,9 +58,9 @@ export async function fetchPageContent(slug: string, locale: string) {
 
   try {
     const data = await contentfulClient.request(query, variables);
-    const page = data?.landingPageCollection?.items?.[0];
+    //const page = data?.landingPageCollection?.items?.[0];
 
-    return page || null;
+    return data || null;
   } catch (err) {
     console.error('Contentful fetch error:', err);
     return null;

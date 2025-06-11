@@ -4,7 +4,7 @@ export default async function DebugPage() {
   try {
     console.log('CLIENT:', contentfulClient);
 
-    const res = await client.request(`
+    const res = await contentfulClient.request(`
       {
         landingPageCollection(limit: 1) {
           items {
