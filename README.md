@@ -34,7 +34,8 @@ git clone https://github.com/PankajDudhat139/Eco-Nova
 cd Eco-Nova
 ### 2. Live Demo
 
-Check out the live demo at [EcoNova Landing] https://eco-nova-9tkj.vercel.app/en
+Check out the live demo at [EcoNova Landing] 
+[https://eco-nova-9tkj.vercel.app/en]
 
 ### 3. Install Dependencies
 
