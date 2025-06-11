@@ -1,24 +1,13 @@
-//import { GraphQLClient } from 'graphql-request';
-import { createClient } from 'contentful';
+import { GraphQLClient } from 'graphql-request';
 
-export const getContentfulClient = () => {
-  const SPACE_ID = process.env.CONTENTFUL_SPACE_ID;
-  const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
-  const ENVIRONMENT = process.env.CONTENTFUL_ENVIRONMENT || 'master';
+const SPACE_ID = process.env.CONTENTFUL_SPACE_ID!;
+const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN!;
+const ENVIRONMENT = process.env.CONTENTFUL_ENVIRONMENT || 'master';
 
-  if (!SPACE_ID || !ACCESS_TOKEN) {
-    throw new Error("Missing Contentful environment variables");
-  }
+const endpoint = `https://graphql.contentful.com/content/v1/spaces/${SPACE_ID}/environments/${ENVIRONMENT}`;
 
-  return createClient({
-    space: SPACE_ID,
-    accessToken: ACCESS_TOKEN,
-    environment: ENVIRONMENT,
-  });
-};
-
-export const getHomepageEntries = async () => {
-  const client = getContentfulClient();
-  const response = await client.getEntries({ content_type: 'homepage' });
-  return response.items;
-};
+export const contentfulClient = new GraphQLClient(endpoint, {
+  headers: {
+    Authorization: `Bearer ${ACCESS_TOKEN}`,
+  },
+});

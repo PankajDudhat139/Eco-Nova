@@ -1,4 +1,4 @@
-import { getContentfulClient } from './contentfulClient';
+import { contentfulClient } from './contentfulClient';
 import { gql } from 'graphql-request';
 
 const query = gql`
@@ -54,11 +54,13 @@ const query = gql`
 `;
 
 export async function fetchPageContent(slug: string, locale: string) {
-  const client = getContentfulClient();
+  const variables = { slug, locale };
 
   try {
-    const data = await client.request(query, { slug, locale });
-    return data?.landingPageCollection?.items?.[0] || null;
+    const data = await contentfulClient.request(query, variables);
+    const page = data?.landingPageCollection?.items?.[0];
+
+    return page || null;
   } catch (err) {
     console.error('Contentful fetch error:', err);
     return null;
