@@ -1,9 +1,8 @@
-import {getContentfulClient} from '@/lib/contentfulClient';
+import {contentfulClient} from '@/lib/contentfulClient';
 
 export default async function DebugPage() {
   try {
-    const client = getContentfulClient();
-    console.log("CLIENT:", client);
+    console.log('CLIENT:', contentfulClient);
 
     const res = await client.request(`
       {

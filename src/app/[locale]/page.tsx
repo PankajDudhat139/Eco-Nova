@@ -1,31 +1,47 @@
-import CallToActionSection from '@/components/CallToActionSection';
-import FeatureSection from '@/components/FeatureSection';
+import {Locale} from 'next-intl';
+import {setRequestLocale} from 'next-intl/server';
+import {use} from 'react';
 import HeroSection from '@/components/HeroSection';
+import FeatureSection from '@/components/FeatureSection';
 import TestimonialSection from '@/components/TestimonialSection';
-import { fetchPageContent } from '@/lib/fetchPageContent';
+import ProductSection from '@/components/ProductSection';
+import CallToActionSection from '@/components/CallToActionSection';
+import FooterSection from '@/components/FooterSection';
 
-export default async function LandingPage({ params }: { params: { lang: string } }) {
-  const content = await fetchPageContent('eco-nova', params.lang || 'en');
-console.log("TOKEN:", process.env.CONTENTFUL_ACCESS_TOKEN);
-  if (!content) return <div>404 - Page Not Found</div>;
+type Props = {
+  params: Promise<{locale: Locale}>;
+};
+
+const items = [
+  {
+    title: 'Eco-Friendly Product',
+    description: 'This is a great eco-friendly product.',
+    images: [
+      'https://images.pexels.com/photos/8294617/pexels-photo-8294617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/8294649/pexels-photo-8294649.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/8294661/pexels-photo-8294661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/8294658/pexels-photo-8294658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    ]
+  }
+];
+
+export default function IndexPage({params}: Props) {
+  const {locale} = use(params);
+
+  // Enable static rendering
+  setRequestLocale(locale);
 
   return (
-    <main>
-      {content.sectionsCollection.items.map((section: any, index: number) => {
-        switch (section.__typename) {
-          case 'HeroSection':
-            return <HeroSection key={index} {...section} />;
-          case 'FeatureSection':
-            return <FeatureSection key={index} {...section} />;
-          case 'CallToActionSection':
-            return <CallToActionSection key={index} {...section} />;
-          case 'TestimonialSection':
-            return <TestimonialSection key={index} {...section} />;
-          // Add more cases as needed
-          default:
-            return null;
-        }
-      })}
-    </main>
+    <>
+      <HeroSection
+        backgroundUrl="https://images.pexels.com/photos/9783346/pexels-photo-9783346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        isVideo={false}
+      />
+      <FeatureSection />
+      <ProductSection items={items} />
+      <CallToActionSection />
+      <TestimonialSection />
+      <FooterSection />
+    </>
   );
 }
